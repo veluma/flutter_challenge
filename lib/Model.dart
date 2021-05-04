@@ -26,7 +26,7 @@ class CityWeather {
         min_temp: json["min_temp"].toInt().round(),
         max_temp: json["max_temp"].toInt().round(),
         wind_speed: json["wind_speed"].toInt().round(),
-        image: 'https://www.metaweather.com/static/img/weather/png/64/' + json["weather_state_abbr"].toString() + '.png',
+        image: 'https://www.metaweather.com/static/img/weather/png/' + json["weather_state_abbr"].toString() + '.png',
         date: json['applicable_date'].toString(),
     );
   }

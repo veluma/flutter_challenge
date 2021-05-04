@@ -2,32 +2,6 @@ import 'package:coding_challenge/Model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
-
-const lisbon = [
-  {
-    "title": "Lisbon",
-    "location_type": "City",
-    "woeid": 742676,
-    "latt_long": "38.725670,-9.150370"
-  }
-];
-const london = [
-  {
-    "title": "London",
-    "location_type": "City",
-    "woeid": 44418,
-    "latt_long": "51.506321,-0.12714"
-  }
-];
-const madrid = [
-  {
-    "title": "Madrid",
-    "location_type": "City",
-    "woeid": 766273,
-    "latt_long": "40.420300,-3.705770"
-  }
-];
-
 const URL_BASE = "https://www.metaweather.com/api/location/";
 
 class Api {
