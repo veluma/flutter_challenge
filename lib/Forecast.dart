@@ -26,7 +26,7 @@ class _ForecastState extends State<Forecast> {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.only(top: 20, bottom: 20, left: 10),
           alignment: Alignment.centerLeft,
           child: Text(widget.cityName,
               style: TextStyle(color: Colors.black54, fontSize: 30)),
@@ -56,25 +56,28 @@ class _ForecastState extends State<Forecast> {
                             margin: EdgeInsets.only(
                                 left: 10, top: 5, bottom: 5, right: 10),
                             child: ListTile(
-                              title: Text(
+                              contentPadding: EdgeInsets.all(8),
+                              leading: Text(
                                   DateFormat('EEEE')
                                       .format(DateTime.parse(city.date)),
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 20)),
-                              subtitle: Text(
-                                  city.min_temp.toString() +
-                                      'ºC' +
-                                      '/' +
-                                      city.max_temp.toString() +
-                                      'ºC',
-                                  style: TextStyle(
-                                      color: Colors.black54, fontSize: 20)),
+                              title: Container(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                    city.min_temp.toString() +
+                                        'ºC' +
+                                        '/' +
+                                        city.max_temp.toString() +
+                                        'ºC',
+                                    style: TextStyle(
+                                        color: Colors.black54, fontSize: 20)),
+                              ),
                               trailing: Image.network(
                                 city.image,
                                 width: 30,
                                 height: 30,
                               ),
-                              isThreeLine: true,
                             ),
                           ),
                           onTap: () {

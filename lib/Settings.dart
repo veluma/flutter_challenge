@@ -88,7 +88,7 @@ class _SettingsState extends State<Settings> {
               Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
                   builder: (context) =>
                       Home(codeCity: _codeCity, cityName: 'London')),
-                ModalRoute.withName('/')
+                ModalRoute.withName('/settings')
               );
             },
           ),
@@ -110,7 +110,7 @@ class _SettingsState extends State<Settings> {
               Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
                   builder: (context) =>
                       Home(codeCity: _codeCity, cityName: 'Madrid')),
-                  ModalRoute.withName('/')
+                  ModalRoute.withName('/settings')
               );
             },
           ),
