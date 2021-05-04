@@ -1,9 +1,12 @@
 import 'package:coding_challenge/Forecast.dart';
 import 'package:coding_challenge/Settings.dart';
-import 'package:coding_challenge/Details.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
+  Home({this.codeCity, this.cityName});
+  final String codeCity;
+  final String cityName;
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -13,11 +16,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> screens = [
-      Settings(),
-      Details()
-    ];
-
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -30,11 +28,11 @@ class _HomeState extends State<Home> {
             IconButton(
                 icon: Icon(Icons.settings),
                 onPressed: () {
-                  print("configuracao");
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Settings(codeCity: widget.codeCity, cityName: widget.cityName,)));
                 })
           ],
         ),
-        body: Forecast()
-    );
+        body: Forecast(codeCity: widget.codeCity, cityName: widget.cityName,)
+        );
   }
 }

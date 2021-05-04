@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: Home(),
+      home: Home(codeCity: "742676", cityName: "Lisbon"),
       debugShowCheckedModeBanner: false,
     )
   );
