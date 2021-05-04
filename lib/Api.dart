@@ -12,7 +12,6 @@ class Api {
     if (response.statusCode == 200) {
       Map<String, dynamic> dataJson = json.decode(response.body);
       cities = dataJson["consolidated_weather"].map<CityWeather>((map) {
-        print(map);
         return CityWeather.fromJson(map);
       }).toList();
       return cities;
